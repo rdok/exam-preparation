@@ -5,6 +5,7 @@
  */
 require __DIR__.'/../vendor/autoload.php';
 
+use App\Http\Controllers\ExceptionsController;
 use App\Http\Controllers\WelcomeController;
 
 $router = new \App\Http\Router();
@@ -12,4 +13,4 @@ $router = new \App\Http\Router();
 $router->get('/', WelcomeController::class, 'welcome');
 $router->post('/post', WelcomeController::class, 'post');
 
-
+$router->dispatch(ExceptionsController::class, 'notFound');

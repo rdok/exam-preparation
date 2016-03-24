@@ -10,15 +10,19 @@ namespace App\Http\Controllers;
  */
 class WelcomeController
 {
+    /**
+     * @return string
+     */
     public function welcome()
     {
-        echo '<br>welcom test';
-        return 'wecome';
+        return 'welcome';
     }
 
+    /**
+     * @return string
+     */
     public function post()
     {
-        echo '<br>post test';
-        return 'wecome';
+        return 'post';
     }
 }
