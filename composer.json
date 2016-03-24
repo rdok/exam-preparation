@@ -1,0 +1,17 @@
+{
+   "name": "rdok/linkwise",
+   "description": "Job exam preparation.",
+   "license": "MIT",
+   "authors": [
+	  {
+		 "name": "Rizart Dokollari",
+		 "email": "r.dokollari@gmail.com"
+	  }
+   ],
+   "require": {},
+   "autoload": {
+	  "psr-4": {
+		 "App\\": "app/"
+	  }
+   }
+}
