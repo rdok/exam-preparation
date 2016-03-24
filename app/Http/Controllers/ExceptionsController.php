@@ -8,7 +8,7 @@ namespace App\Http\Controllers;
 /**
  * Class ExceptionsController.
  */
-class ExceptionsController
+class ExceptionsController extends BaseController
 {
     public function notFound()
     {

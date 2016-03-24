@@ -8,7 +8,7 @@ namespace App\Http\Controllers;
 /**
  * Class WelcomeController.
  */
-class WelcomeController
+class WelcomeController extends BaseController
 {
     /**
      * @return string
