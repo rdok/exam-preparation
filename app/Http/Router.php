@@ -8,7 +8,7 @@ namespace App\Http;
 /**
  * Class Routes.
  */
-class Routes
+class Router
 {
     /**
      * @param $url
@@ -17,7 +17,9 @@ class Routes
      */
     public function get($url, $controller, $function)
     {
-        if ($url !== $_SERVER[ 'REQUEST_URI' ] || 'GET' !== $_SERVER[ 'REQUEST_METHOD' ]) {
+        $filteredUri = strtok($_SERVER[ "REQUEST_URI" ], '?');
+
+        if ($url !== $filteredUri || 'GET' !== $_SERVER[ 'REQUEST_METHOD' ]) {
             return null;
         }
 

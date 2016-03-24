@@ -5,9 +5,11 @@
  */
 require __DIR__.'/../vendor/autoload.php';
 
-$routes = new \App\Http\Routes();
+use App\Http\Controllers\WelcomeController;
 
-$routes->get('/', \App\Http\Controllers\WelcomeController::class, 'welcome');
-$routes->post('/post', \App\Http\Controllers\WelcomeController::class, 'post');
+$router = new \App\Http\Router();
+
+$router->get('/', WelcomeController::class, 'welcome');
+$router->post('/post', WelcomeController::class, 'post');
 
 
