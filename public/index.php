@@ -13,6 +13,7 @@ $router = new \App\Http\Router();
 
 $router->get('/', WelcomeController::class, 'welcome');
 $router->get('/honey-pot', HoneyPotController::class, 'get');
+$router->post('/honey-pot', HoneyPotController::class, 'post');
 $router->post('/post', WelcomeController::class, 'post');
 
 $router->dispatch(ExceptionsController::class, 'notFound');

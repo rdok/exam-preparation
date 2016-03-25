@@ -8,6 +8,6 @@ class_name: AcceptanceTester
 modules:
     enabled:
         - WebDriver:
-            url: 'http://localhost/'
+            url: 'http://linkwise.app/'
             browser: phantomjs
         - \Helper\Acceptance

@@ -14,4 +14,8 @@ class HoneyPotController extends BaseController
         $this->view('honey-pot', compact('name'));
     }
 
+    public function post()
+    {
+        echo "honey pot check"; exit;
+    }
 }
