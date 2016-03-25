@@ -8,7 +8,7 @@ use App\Controllers\HoneyPotController;
 use App\Controllers\WelcomeController;
 
 require __DIR__.'/../vendor/autoload.php';
-
+require __DIR__.'/../app/bootstrap.php';
 
 $router = new \App\Router();
 
