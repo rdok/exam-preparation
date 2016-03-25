@@ -3,7 +3,10 @@
  * @author Rizart Dokollari <r.dokollari@gmail.com>
  * @since  25/03/16
  */
-if (! empty($notifications = $this->sessionNotifier->getNotifications())) {
+use App\IoC;
+use App\Notifiers\SessionNotifier;
+
+if (! empty($notifications = IoC::resolve(SessionNotifier::class)->getNotifications())) {
     foreach ($notifications as $notification) {
         ?>
         <div class="alert alert-dismissible alert-<?= $notification->getLevel(); ?>">

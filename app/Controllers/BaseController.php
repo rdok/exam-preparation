@@ -5,8 +5,6 @@
  */
 namespace App\Controllers;
 
-use App\Notifiers\SessionNotifier;
-
 /**
  * @property string layout
  */
@@ -16,7 +14,6 @@ abstract class BaseController
     protected $content;
     protected $data;
     protected $layout;
-    protected $sessionNotifier;
     private $navigation;
 
     public function __construct()
@@ -24,7 +21,6 @@ abstract class BaseController
         $this->viewsPath = __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'Views'.DIRECTORY_SEPARATOR;
         $this->layout = 'layouts'.DIRECTORY_SEPARATOR.'master';
         $this->navigation = '_partials'.DIRECTORY_SEPARATOR.'navigation';
-        $this->sessionNotifier = new SessionNotifier();
     }
 
     public function content()

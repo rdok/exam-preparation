@@ -50,6 +50,6 @@ class SessionNotifierCest
 
         $I->assertTrue(array_key_exists('flash_notifications', $_SESSION));
         $I->assertSame($expectedMessage, $_SESSION[ 'flash_notifications' ][ 0 ]->getMessage());
-        $I->assertSame('error', $_SESSION[ 'flash_notifications' ][ 0 ]->getLevel());
+        $I->assertSame('danger', $_SESSION[ 'flash_notifications' ][ 0 ]->getLevel());
     }
 }

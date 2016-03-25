@@ -6,15 +6,17 @@
 use App\Controllers\ExceptionsController;
 use App\Controllers\HoneyPotController;
 use App\Controllers\WelcomeController;
+use App\IoC;
 
 require __DIR__.'/../vendor/autoload.php';
 require __DIR__.'/../app/bootstrap.php';
 
+
 $router = new \App\Router();
 
-$router->get('/', WelcomeController::class, 'welcome');
-$router->get('/honey-pot', HoneyPotController::class, 'get');
-$router->post('/honey-pot', HoneyPotController::class, 'post');
-$router->post('/post', WelcomeController::class, 'post');
+$router->get('/', IoC::resolve(WelcomeController::class), 'welcome');
+$router->get('/honey-pot', IoC::resolve(HoneyPotController::class), 'get');
+$router->post('/honey-pot', IoC::resolve(HoneyPotController::class), 'post');
+$router->post('/post', IoC::resolve(WelcomeController::class), 'post');
 
-$router->dispatch(ExceptionsController::class, 'notFound');
+$router->dispatch(IoC::resolve(ExceptionsController::class), 'notFound');
