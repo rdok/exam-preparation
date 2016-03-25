@@ -3,7 +3,7 @@
  * @author Rizart Dokollari <r.dokollari@gmail.com>
  * @since  24/03/16
  */
-namespace App\Http\Controllers;
+namespace App\Controllers;
 
 class HoneyPotController extends BaseController
 {

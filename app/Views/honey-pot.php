@@ -20,6 +20,11 @@
                 <span class="help-block">Enter</span>
             </div>
         </div>
-        <input type="submit" value="Submit" class="btn btn-primary">
+        <div class="form-group">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-10">
+                <input type="submit" value="Submit" class="btn btn-primary">
+            </div>
+        </div>
     </fieldset>
 </form>

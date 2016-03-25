@@ -3,13 +3,14 @@
  * @author Rizart Dokollari <r.dokollari@gmail.com>
  * @since  24/03/16
  */
+use App\Controllers\ExceptionsController;
+use App\Controllers\HoneyPotController;
+use App\Controllers\WelcomeController;
+
 require __DIR__.'/../vendor/autoload.php';
 
-use App\Http\Controllers\ExceptionsController;
-use App\Http\Controllers\HoneyPotController;
-use App\Http\Controllers\WelcomeController;
 
-$router = new \App\Http\Router();
+$router = new \App\Router();
 
 $router->get('/', WelcomeController::class, 'welcome');
 $router->get('/honey-pot', HoneyPotController::class, 'get');

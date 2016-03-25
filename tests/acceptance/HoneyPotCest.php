@@ -20,7 +20,7 @@ class HoneyPotCest
     }
 
     // tests
-    public function test_correct_submit_form(AcceptanceTester $I)
+    public function test_form_submission_without_any_error(AcceptanceTester $I)
     {
         $I->wantTo('verify the honey pot is working');
         $I->amOnPage('/honey-pot');
@@ -32,5 +32,6 @@ class HoneyPotCest
         $I->seeInSource('<label for="inputMessage" class="col-lg-2 control-label">Message:</label>');
         $I->fillField('inputMessage', $this->message);
         $I->click('Submit');
+        $I->see('Email sent');
     }
 }
