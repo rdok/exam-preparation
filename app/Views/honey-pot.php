@@ -1,4 +1,4 @@
-<form class="form-horizontal" method="post">
+<form class="form-horizontal" method="post" id="honey-pot-form" action="<?= $this->url('honey-pot') ?>">
     <fieldset>
         <legend>Legend</legend>
         <div class="form-group">
@@ -25,6 +25,11 @@
             <div class="col-lg-10">
                 <input type="submit" value="Send" class="btn btn-primary">
             </div>
+        </div>
+        <div class='form-group req'>
+            <label>
+                <input type="text" name="inputWeb" id="inputWeb" class="form-control" placeholder="Enter">
+            </label>
         </div>
     </fieldset>
 </form>

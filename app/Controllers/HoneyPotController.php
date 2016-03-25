@@ -5,12 +5,13 @@
  */
 namespace App\Controllers;
 
+/**
+ * Class HoneyPotController.
+ */
 class HoneyPotController extends BaseController
 {
     public function get()
     {
-        $this->sessionNotifier->success('<strong>Well done!</strong> Email sent.');
-
         $name = 'Some Name';
 
         $this->view('honey-pot', compact('name'));
@@ -18,7 +19,15 @@ class HoneyPotController extends BaseController
 
     public function post()
     {
-        $this->sessionNotifier->success('Email sent.');
+        if (isset($_POST[ 'inputWeb' ]) && $_POST['inputWeb']) {
+            $this->sessionNotifier->error('<strong>Error!</strong> Bot detected.');
+
+            $this->view('honey-pot', compact('name'));
+
+            return;
+        }
+
+        $this->sessionNotifier->success('<strong>Well done!</strong> Email sent.');
 
         $this->view('honey-pot', compact('name'));
     }

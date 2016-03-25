@@ -4,6 +4,7 @@
  * @since  24/03/16
  */
 namespace App\Controllers;
+
 use App\Notifiers\SessionNotifier;
 
 /**
@@ -54,6 +55,6 @@ abstract class BaseController
 
     protected function url($url = null)
     {
-        echo "http://$_SERVER[HTTP_HOST]".DIRECTORY_SEPARATOR.$url;
+        return "http://$_SERVER[HTTP_HOST]".DIRECTORY_SEPARATOR.$url;
     }
 }

@@ -53,6 +53,6 @@ class SessionNotifier implements Notifier
      */
     public function error($message)
     {
-        $this->message($message, 'error');
+        $this->message($message, 'danger');
     }
 }
