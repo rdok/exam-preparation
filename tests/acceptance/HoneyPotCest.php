@@ -31,7 +31,8 @@ class HoneyPotCest
         $I->fillField('inputEmail', $this->email);
         $I->seeInSource('<label for="inputMessage" class="col-lg-2 control-label">Message:</label>');
         $I->fillField('inputMessage', $this->message);
-        $I->click('Submit');
-        $I->see('Email sent');
+        $I->click('Send');
+        $I->seeCurrentUrlEquals('/honey-pot');
+        $I->see('Email sent.');
     }
 }

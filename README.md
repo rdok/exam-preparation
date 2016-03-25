@@ -12,8 +12,9 @@ Each concept must have tests (acceptance/unit) as needed, you don't use function
 - [Tests]()
 - [Database migrations]()
 - [Use singleton database connection]()
-- [Use principle of single responsibility]()
-- [Flash Messages]() | Session-Based Messages
+- [Use Single Responsibility Principle]() | A class should have only one reason to change.
+- [Flash Notifications](https://github.com/rdok/exam-preparation/blob/master/app/Notifications/Flash.php) | Session-Based Notifications
+
 ## Dev
 - Follow [this](http://codeception.com/docs/modules/WebDriver#phantomjs) guidelines to set up PhantomJS headless testing server.
 - http://codeception.com/quickstart

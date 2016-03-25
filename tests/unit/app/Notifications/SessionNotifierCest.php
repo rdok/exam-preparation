@@ -1,10 +1,7 @@
 <?php
-use App\Notifications\Flash;
+use App\Notifiers\SessionNotifier;
 
-/**
- * Class FlashCest.
- */
-class FlashCest
+class SessionNotifierCest
 {
     /**
      * @param UnitTester $I
@@ -27,7 +24,7 @@ class FlashCest
      */
     public function it_creates_success_notifications(UnitTester $I)
     {
-        $flash = new Flash();
+        $flash = new SessionNotifier();
 
         $I->assertFalse(array_key_exists('flash_notifications', $_SESSION));
 
@@ -35,8 +32,8 @@ class FlashCest
         $flash->success($expectedMessage);
 
         $I->assertTrue(array_key_exists('flash_notifications', $_SESSION));
-        $I->assertSame($expectedMessage, $_SESSION[ 'flash_notifications' ][ 0 ]->message);
-        $I->assertSame('success', $_SESSION[ 'flash_notifications' ][ 0 ]->level);
+        $I->assertSame($expectedMessage, $_SESSION[ 'flash_notifications' ][ 0 ]->getMessage());
+        $I->assertSame('success', $_SESSION[ 'flash_notifications' ][ 0 ]->getLevel());
     }
 
     /**
@@ -44,7 +41,7 @@ class FlashCest
      */
     public function it_creates_error_notifications(UnitTester $I)
     {
-        $flash = new Flash();
+        $flash = new SessionNotifier();
 
         $I->assertFalse(array_key_exists('flash_notifications', $_SESSION));
 
@@ -52,7 +49,7 @@ class FlashCest
         $flash->error($expectedMessage);
 
         $I->assertTrue(array_key_exists('flash_notifications', $_SESSION));
-        $I->assertSame($expectedMessage, $_SESSION[ 'flash_notifications' ][ 0 ]->message);
-        $I->assertSame('error', $_SESSION[ 'flash_notifications' ][ 0 ]->level);
+        $I->assertSame($expectedMessage, $_SESSION[ 'flash_notifications' ][ 0 ]->getMessage());
+        $I->assertSame('error', $_SESSION[ 'flash_notifications' ][ 0 ]->getLevel());
     }
 }

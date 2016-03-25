@@ -10,6 +10,11 @@ namespace App;
  */
 class Router
 {
+    public function __construct()
+    {
+        session_start();
+    }
+
     /**
      * @param $url
      * @param $controller

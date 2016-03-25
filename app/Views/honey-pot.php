@@ -23,7 +23,7 @@
         <div class="form-group">
             <div class="col-lg-2"></div>
             <div class="col-lg-10">
-                <input type="submit" value="Submit" class="btn btn-primary">
+                <input type="submit" value="Send" class="btn btn-primary">
             </div>
         </div>
     </fieldset>

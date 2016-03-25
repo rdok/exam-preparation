@@ -9,13 +9,17 @@ class HoneyPotController extends BaseController
 {
     public function get()
     {
-        $name = 'name';
+        $this->sessionNotifier->success('<strong>Well done!</strong> Email sent.');
+
+        $name = 'Some Name';
 
         $this->view('honey-pot', compact('name'));
     }
 
     public function post()
     {
-        echo "honey pot check"; exit;
+        $this->sessionNotifier->success('Email sent.');
+
+        $this->view('honey-pot', compact('name'));
     }
 }

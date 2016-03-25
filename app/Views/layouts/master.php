@@ -19,10 +19,7 @@
 <div class="container">
     <?php $this->render('_partials.navigation'); ?>
 
-    <div class="alert alert-dismissible alert-success">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong>Well done!</strong> Email sent.
-    </div>
+    <?php $this->render('_partials.notifications'); ?>
 
     <?php $this->content(); ?>
 </div>
