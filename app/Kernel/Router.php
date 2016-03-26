@@ -3,7 +3,7 @@
  * @author Rizart Dokollari <r.dokollari@gmail.com>
  * @since  24/03/16
  */
-namespace App;
+namespace App\Kernel;
 
 /**
  * Class Router.
@@ -42,7 +42,7 @@ class Router
      */
     public function dispatch($controller, $function)
     {
-        echo (new $controller)->$function();
+        echo $controller->$function();
 
         die();
     }

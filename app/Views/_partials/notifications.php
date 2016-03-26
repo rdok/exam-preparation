@@ -3,7 +3,7 @@
  * @author Rizart Dokollari <r.dokollari@gmail.com>
  * @since  25/03/16
  */
-use App\IoC;
+use App\Kernel\IoC;
 use App\Notifiers\SessionNotifier;
 
 if (! empty($notifications = IoC::resolve(SessionNotifier::class)->getNotifications())) {

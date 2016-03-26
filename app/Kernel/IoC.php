@@ -3,7 +3,7 @@
  * @author Rizart Dokollari <r.dokollari@gmail.com>
  * @since  25/03/16
  */
-namespace App;
+namespace App\Kernel;
 
 use Closure;
 use Exception;

@@ -6,6 +6,7 @@
 namespace App\Controllers;
 
 use App\IoC;
+use App\Notifiers\Notifier;
 use App\Notifiers\SessionNotifier;
 
 /**
@@ -13,6 +14,8 @@ use App\Notifiers\SessionNotifier;
  */
 class HoneyPotController extends BaseController
 {
+    protected $notifier;
+
     public function get()
     {
         $name = 'Some Name';
@@ -22,18 +25,21 @@ class HoneyPotController extends BaseController
 
     public function post()
     {
-        $sessionNotifier = IoC::resolve(SessionNotifier::class);
-
         if (isset($_POST[ 'inputWeb' ]) && $_POST[ 'inputWeb' ]) {
-            $sessionNotifier->error('<strong>Error!</strong> Bot detected.');
+            $this->notifier->error('<strong>Error!</strong> Bot detected.');
 
-            $sessionNotifier->view('honey-pot', compact('name'));
+            $this->view('honey-pot', compact('name'));
 
             return;
         }
 
-        $sessionNotifier->success('<strong>Well done!</strong> Email sent.');
+        $this->notifier->success('<strong>Well done!</strong> Email sent.');
 
         $this->view('honey-pot', compact('name'));
+    }
+
+    public function setDependencies(Notifier $notifier)
+    {
+        $this->notifier = $notifier;
     }
 }

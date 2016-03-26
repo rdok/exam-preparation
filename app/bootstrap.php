@@ -9,7 +9,8 @@ $_SESSION[ 'CURRENT_URL' ] = $_SERVER[ 'REQUEST_URI' ];
 use App\Controllers\ExceptionsController;
 use App\Controllers\HoneyPotController;
 use App\Controllers\WelcomeController;
-use App\IoC;
+use App\Kernel\IoC;
+use App\Kernel\Router;
 use App\Notifiers\SessionNotifier;
 
 IoC::register(WelcomeController::class, function () {
@@ -20,6 +21,7 @@ IoC::register(WelcomeController::class, function () {
 
 IoC::register(HoneyPotController::class, function () {
     $honeyPotController = new HoneyPotController();
+    $honeyPotController->setDependencies(new SessionNotifier);
 
     return $honeyPotController;
 });
@@ -34,4 +36,10 @@ IoC::register(SessionNotifier::class, function () {
     $sessionNotifier = new SessionNotifier();
 
     return $sessionNotifier;
+});
+
+IoC::register(Router::class, function () {
+    $router = new Router();
+
+    return $router;
 });

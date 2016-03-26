@@ -8,9 +8,9 @@ Each concept must have tests (acceptance/unit) as needed, you don't use function
 - [HoneyPot](https://github.com/rdok/exam-preparation/blob/master/app/Controllers/HoneyPotController.php#L20) - [Tests](https://github.com/rdok/exam-preparation/blob/master/tests/acceptance/HoneyPotCest.php#L41) | a computer security mechanism set to detect, deflect, or, in some manner, counteract attempts at unauthorized use of information systems
 - [Router controller](https://github.com/rdok/exam-preparation/blob/master/app/Http/Router.php#L11)
 - [Viewer](https://github.com/rdok/exam-preparation/blob/master/app/Controllers/BaseController.php#L22)
-- [Depedency Injection | Composition Root]()
+- [Depedency Injection](https://github.com/rdok/exam-preparation/blob/master/app/IoC.php) && [Composition Root](https://github.com/rdok/exam-preparation/blob/master/app/bootstrap.php#L15)
 - [Tests](https://github.com/rdok/exam-preparation/tree/master/tests) | Based on Full-stack testing PHP framework http://codeception.com
-- [Database migrations]()
+- [Database migrations]() | Track database structure on git. 
 - [Use singleton database connection]()
 - [Use Single Responsibility Principle]() | A class should have only one reason to change.
 - [Flash Notifications](https://github.com/rdok/exam-preparation/blob/master/app/Notifications/Flash.php) | Session-Based Notifications
