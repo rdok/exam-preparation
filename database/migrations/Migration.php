@@ -4,7 +4,7 @@
  * @since  25/03/16
  */
 
-namespace database\migrations;
+namespace Database\migrations;
 
 interface Migration
 {
