@@ -26,7 +26,7 @@ abstract class MySqlMigration implements Migration
     /**
      * Reverse the migrations
      */
-    public function down()
+    public function destroy()
     {
         $tableDeleted = $this->dbManager->getConnection()
             ->prepare("DESCRIBE `".getenv('DB_NAME')."`.`".$this->getTableName()."`")

@@ -9,9 +9,9 @@ use App\Models\User;
 use Database\migrations\Migration;
 use Database\migrations\MySqlMigration;
 
-class CreateUsersTable extends MySqlMigration implements Migration
+class UsersTable extends MySqlMigration implements Migration
 {
-    public function up()
+    public function create()
     {
         $query =
             "CREATE TABLE `".getenv('DB_NAME')."`.`".User::$tableName."` (".

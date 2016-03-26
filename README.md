@@ -10,9 +10,9 @@ Each concept must have tests (acceptance/unit) as needed, you don't use function
 - [Viewer](https://github.com/rdok/exam-preparation/blob/master/app/Controllers/BaseController.php#L22)
 - [Depedency Injection](https://github.com/rdok/exam-preparation/blob/master/app/IoC.php) && [Composition Root](https://github.com/rdok/exam-preparation/blob/master/app/bootstrap.php#L15)
 - [Tests](https://github.com/rdok/exam-preparation/tree/master/tests) | Based on Full-stack testing PHP framework http://codeception.com
-- [Database migrations]() | Track database structure on git. 
-- [Use singleton database connection]()
-- [Use Single Responsibility Principle]() | A class should have only one reason to change.
+- [Database migrations](https://github.com/rdok/exam-preparation/blob/master/database/migrations/mysql/CreateUsersTable.php) | Track database structure on git. 
+- [Use singleton database connection](https://github.com/rdok/exam-preparation/blob/master/app/Kernel/DbManager.php)
+- [Use Single Responsibility Principle](https://github.com/rdok/exam-preparation/blob/master/app/Controllers/HoneyPotController.php#L41) | A class should have only one reason to change. Use IoC to [inject dependency](https://github.com/rdok/exam-preparation/blob/master/app/bootstrap.php#L38), on this interface.
 - [Flash Notifications](https://github.com/rdok/exam-preparation/blob/master/app/Notifications/Flash.php) | Session-Based Notifications
 
 ## Dev

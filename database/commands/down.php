@@ -19,4 +19,4 @@ $dbManager = IoC::resolve(DbManager::class);
 
 $dbTables = new DatabaseTables($dbManager);
 
-$dbTables->create();
+$dbTables->destroy();

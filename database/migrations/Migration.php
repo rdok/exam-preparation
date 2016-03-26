@@ -8,9 +8,9 @@ namespace Database\migrations;
 
 interface Migration
 {
-    public function up();
+    public function create();
 
-    public function down();
+    public function destroy();
 
     public function getTableName();
 }

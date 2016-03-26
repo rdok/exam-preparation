@@ -7,7 +7,7 @@ namespace Database\migrations\mysql;
 
 use App\Kernel\DbManager;
 
-class DatabaseSeed
+class DatabaseTables
 {
     /**
      * @var DbManager
@@ -19,8 +19,13 @@ class DatabaseSeed
         $this->dbManager = $dbManager;
     }
 
-    public function up()
+    public function create()
     {
-        (new CreateUsersTable($this->dbManager))->up();
+        (new UsersTable($this->dbManager))->create();
+    }
+
+    public function destroy()
+    {
+        (new UsersTable($this->dbManager))->destroy();
     }
 }
